@@ -5,7 +5,8 @@ import style from './style'
 class SimpleForm extends React.Component {
   state = {
     firstName: "",
-    firstNameError: "",
+    lastName: "",
+    firstNameError: ""
   };
 
   validateName = name => {
@@ -24,13 +25,26 @@ class SimpleForm extends React.Component {
     return this.setState({ firstNameError });
   };
 
+  onLastNameBlur = () => {
+    const { lastName } = this.state;
+
+    const lastNameError = this.validateName( lastName );
+
+    return this.setState({ lastNameError });
+  };
+
   onFirstNameChange = event =>
     this.setState({
       firstName: event.target.value
     });
 
+  onLastNameChange = event =>
+    this.setState({
+      lastName: event.target.value
+    });
+
   render() {
-    const { firstNameError, firstName } = this.state;
+    const { firstNameError, firstName, lastName, lastNameError } = this.state;
     return (
       <div style={style.form}>
        <div style={style.inputGroup}>
@@ -46,8 +60,21 @@ class SimpleForm extends React.Component {
           {firstNameError && <div style={style.error}>{firstNameError}</div>}
         </label>
        </div>
+       <div style={style.inputGroup}>
+        <label>
+         Last name:
+          <input
+           style={style.input}
+           type="text"
+           name="lastName"
+           onChange={this.onLastNameChange}
+           onBlur={this.onLastNameBlur}
+          />
+          {lastNameError && <div style={style.error}>{lastNameError}</div>}
+        </label>
+       </div>
        <div>
-        <Greetings firstName={this.state.firstName} />
+        <Greetings firstName={ firstName } lastName={ lastName } />
        </div>
       </div>
     );
