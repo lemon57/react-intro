@@ -1,5 +1,35 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+**Create first training React application and deploy to [GutHub Pages](https://pages.github.com/)**. </br>
+Used following articles in the developing process which guided on the right decisions: </br>
+[Deploy React with NPM](https://codeburst.io/deploy-react-to-github-pages-to-create-an-amazing-website-42d8b09cd4d)</br>
+[Deploy React with Yarn](https://dev.to/javascripterika/deploy-a-react-app-as-a-github-user-page-with-yarn-3fka)</br>
+
+**Faced to following problems:**
+1. Can't buld and deploy React application </br>
+solution: it was neccessary to add **gh-pages** packages. Just in the current directory of your project:</br>
+`$ yarn add gh-pages` and correct accordingly `package.json` if using Yarn or</br>
+`$ npm install --save gh-pages` and adjust accordingly `package.json` if using NPM
+2. After successful deploying the browser produced the error "404" - web app doesn't work</br>
+solution: you have to delete the service worker file and any references to it in your index.js file... & remember to clear your browser cache (a hard refresh doesn't suffice) </br>
+Removed followings lines in `index.js`: </br>
+... </br>
+`import * as serviceWorker from './serviceWorker';`</br>
+... </br>
+`serviceWorker.unregister();`
+
+**Got the following skills:**
+1. Set up the environment for developing: 
+  - install Node.js - a JavaScript runtime environment,
+  - set up NPM - package manager for JavaScript
+2. create React app using standart Facebook framework create-react-app
+3. learned how build the App with React Components structure 
+4. using props and state in developing process 
+5. creating form validation, using `onBlur` event handler
+6. add styling to `style,js`and import to component page
+7. add & commit & push on **GitHub**
+8. deploy React app to [GitHub Pages](https://lemon57.github.io/react-intro/)
+
 ## Available Scripts
 
 In the project directory, you can run:
