@@ -1,16 +1,16 @@
 {
-  "homepage": "http://lemon57.github.io/react-intro",
   "name": "react-intro",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lemon57.github.io/react-intro",
   "dependencies": {
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "intro -d build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
