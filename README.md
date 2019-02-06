@@ -7,11 +7,11 @@ Used following articles in the developing process which guided on the right deci
 
 **Faced to following problems:**
 1. Can't buld and deploy React application </br>
-solution: it was neccessary to add **gh-pages** packages. Just in the current directory of your project:</br>
+*solution:* it was neccessary to add **gh-pages** packages. Just in the current directory of your project:</br>
 `$ yarn add gh-pages` and correct accordingly `package.json` if using Yarn or</br>
 `$ npm install --save gh-pages` and adjust accordingly `package.json` if using NPM
 2. After successful deploying the browser produced the error "404" - web app doesn't work</br>
-solution: you have to delete the service worker file and any references to it in your index.js file... & remember to clear your browser cache (a hard refresh doesn't suffice) </br>
+*solution:* you have to delete the service worker file and any references to it in your index.js file... & remember to clear your browser cache (a hard refresh doesn't suffice) </br>
 Removed followings lines in `index.js`: </br>
 ... </br>
 `import * as serviceWorker from './serviceWorker';`</br>
