@@ -2,6 +2,8 @@
 const style = {
     form: {
         margin: 50,
+        marginLeft: "auto",
+        marginRight: "auto",
         padding: 10,
         width: 300,
         border: "1px solid black",
